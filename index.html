@@ -47,20 +47,13 @@
       text-decoration: underline;
     }
 
-    .profile-img {
+    .profile-img,
+    .project-img {
       width: 200px;
       height: 200px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .project-img {
-      width: 100%;
-      max-width: 600px;
-      margin: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     main {
@@ -76,6 +69,18 @@
       font-size: 24px;
       color: #556b2f;
       margin-bottom: 10px;
+    }
+
+    .project-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .project-text {
+      max-width: 750px;
+      margin-right: 20px;
     }
 
     footer {
@@ -116,28 +121,36 @@
 
     <section>
       <h2>Research & Academic Projects</h2>
-      <ul>
-        <li>
-          <strong>PhD Research:</strong> Physical interaction in cluttered canopy environment<br />
-          <img src="https://via.placeholder.com/600x300" alt="PhD Research Placeholder" class="project-img" />
-        </li>
-        <li>
-          <strong>Master's Project:</strong> Vision-based Follow-the-Leader branch controller to detect pruning points on sweet cherry trees. <a href="#">Paper link</a><br />
-          <img src="https://via.placeholder.com/600x300" alt="Master's Project Placeholder" class="project-img" />
-        </li>
-        <li>
-          <strong>Internship Project:</strong> As a Project Assistant with Dr. Dinesh at Indian Institute of Science, contributed to the design of a six-axis robot for prenatal scanning<br />
-          <img src="https://via.placeholder.com/600x300" alt="Internship Project Placeholder" class="project-img" />
-        </li>
-        <li>
-          <strong>Bachelor's Major Project:</strong> Dual-arm robot for basic household tasks. <a href="#">Paper link</a><br />
-          <img src="https://via.placeholder.com/600x300" alt="Bachelor's Project Placeholder" class="project-img" />
-        </li>
-        <li>
-          <strong>Design Project:</strong> Low-cost hospital bed for bedridden patients to prevent bedsores. <a href="#">Patent link</a><br />
-          <img src="https://via.placeholder.com/600x300" alt="Design Project Placeholder" class="project-img" />
-        </li>
-      </ul>
+      <div class="project-item">
+        <div class="project-text">
+          <strong>PhD Research:</strong> Physical interaction in cluttered canopy environment
+        </div>
+        <img src="https://via.placeholder.com/200" alt="PhD Research Placeholder" class="project-img" />
+      </div>
+      <div class="project-item">
+        <div class="project-text">
+          <strong>Master's Project:</strong> Vision-based Follow-the-Leader branch controller to detect pruning points on sweet cherry trees. <a href="#">Paper link</a>
+        </div>
+        <img src="https://via.placeholder.com/200" alt="Master's Project Placeholder" class="project-img" />
+      </div>
+      <div class="project-item">
+        <div class="project-text">
+          <strong>Internship Project:</strong> As a Project Assistant with Dr. Dinesh at Indian Institute of Science, contributed to the design of a six-axis robot for prenatal scanning
+        </div>
+        <img src="https://via.placeholder.com/200" alt="Internship Project Placeholder" class="project-img" />
+      </div>
+      <div class="project-item">
+        <div class="project-text">
+          <strong>Bachelor's Major Project:</strong> Dual-arm robot for basic household tasks. <a href="#">Paper link</a>
+        </div>
+        <img src="https://via.placeholder.com/200" alt="Bachelor's Project Placeholder" class="project-img" />
+      </div>
+      <div class="project-item">
+        <div class="project-text">
+          <strong>Design Project:</strong> Low-cost hospital bed for bedridden patients to prevent bedsores. <a href="#">Patent link</a>
+        </div>
+        <img src="https://via.placeholder.com/200" alt="Design Project Placeholder" class="project-img" />
+      </div>
     </section>
 
     <section>
