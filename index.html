@@ -19,6 +19,7 @@
       color: #333;
       display: flex;
       height: 100vh;
+      overflow: hidden;
     }
 
     nav {
@@ -53,8 +54,14 @@
     .content {
       width: 66.66%;
       padding: 40px;
-      overflow-y: auto;
+      overflow-y: scroll;
       box-sizing: border-box;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .content::-webkit-scrollbar {
+      display: none;
     }
 
     header {
@@ -120,6 +127,13 @@
       margin-right: 20px;
     }
 
+    .project-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0 5px 0;
+      color: #333;
+    }
+
     footer {
       font-size: 14px;
       color: #888;
@@ -168,33 +182,42 @@
 
       <section id="research">
         <h2>Research & Academic Projects</h2>
+
         <div class="project-item">
           <div class="project-text">
-            <strong>PhD Research:</strong> Physical interaction in cluttered canopy environment
+            <div class="project-title">PhD Research: Physical interaction in cluttered canopy environment</div>
           </div>
           <img src="https://via.placeholder.com/200" alt="PhD Research Placeholder" class="project-img" />
         </div>
+
         <div class="project-item">
           <div class="project-text">
-            <strong>Master's Project:</strong> Vision-based Follow-the-Leader branch controller to detect pruning points on sweet cherry trees. <a href="#">Paper link</a>
+            <div class="project-title">Master's Project: Follow-the-Leader Branch Controller</div>
+            Vision-based controller to detect pruning points on sweet cherry trees. <a href="#">Paper link</a>
           </div>
           <img src="https://via.placeholder.com/200" alt="Master's Project Placeholder" class="project-img" />
         </div>
+
         <div class="project-item">
           <div class="project-text">
-            <strong>Internship Project:</strong> As a Project Assistant with Dr. Dinesh at Indian Institute of Science, contributed to the design of a six-axis robot for prenatal scanning
+            <div class="project-title">Internship Project: Six-axis Prenatal Scanning Robot</div>
+            Contribution as Project Assistant at IISc Bangalore in robot design for prenatal scanning.
           </div>
           <img src="https://via.placeholder.com/200" alt="Internship Project Placeholder" class="project-img" />
         </div>
+
         <div class="project-item">
           <div class="project-text">
-            <strong>Bachelor's Major Project:</strong> Dual-arm robot for basic household tasks. <a href="#">Paper link</a>
+            <div class="project-title">Bachelor's Major Project: Dual-arm Domestic Robot</div>
+            Designed and implemented dual-arm robot for household tasks. <a href="#">Paper link</a>
           </div>
           <img src="https://via.placeholder.com/200" alt="Bachelor's Project Placeholder" class="project-img" />
         </div>
+
         <div class="project-item">
           <div class="project-text">
-            <strong>Design Project:</strong> Low-cost hospital bed for bedridden patients to prevent bedsores. <a href="#">Patent link</a>
+            <div class="project-title">Design Project: Bed for Bedsore Prevention</div>
+            Low-cost hospital bed for bedridden patients. <a href="#">Patent link</a>
           </div>
           <img src="https://via.placeholder.com/200" alt="Design Project Placeholder" class="project-img" />
         </div>
