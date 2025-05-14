@@ -9,6 +9,7 @@
   <style>
     html {
       scroll-behavior: smooth;
+      height: 100%;
     }
 
     body {
@@ -45,6 +46,7 @@
       text-decoration: none;
       color: #556b2f;
       font-weight: bold;
+      cursor: pointer;
     }
 
     nav ul li a:hover {
@@ -54,10 +56,11 @@
     .content {
       width: 80%;
       padding: 40px;
-      overflow-y: scroll;
+      overflow-y: auto;
       box-sizing: border-box;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      scroll-behavior: smooth;
     }
 
     .content::-webkit-scrollbar {
@@ -65,7 +68,7 @@
     }
 
     .scroll-section {
-      scroll-margin-top: 40px;
+      scroll-margin-top: 60px;
     }
 
     header {
