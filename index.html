@@ -10,9 +10,43 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 40px;
+      padding: 0;
       background: #fff;
       color: #333;
+      display: flex;
+    }
+
+    nav {
+      width: 220px;
+      padding: 40px 20px;
+      border-right: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-bottom: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #556b2f;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
     }
 
     header {
@@ -56,11 +90,6 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
-    }
-
     section {
       margin-bottom: 40px;
     }
@@ -84,96 +113,107 @@
     }
 
     footer {
-      max-width: 1000px;
-      margin: 60px auto 0;
       font-size: 14px;
       color: #888;
       text-align: center;
+      padding: 20px 0;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="bio">
-      <h1><strong>Nidhi</strong> Parayil</h1>
-      <p>PhD candidate in Agricultural Robotics</p>
-      <p>
-        I am a researcher focused on agricultural robotics, automation, and intelligent systems. My background spans undergraduate robotics competitions, project assistantship, and PhD research at QUT.
-        I am particularly interested in how robotics can support sustainable agriculture.
-      </p>
-      <p>
-        Connect with me on
-        <a href="#">Google Scholar</a>,
-        <a href="#">ResearchGate</a>, and
-        <a href="#">LinkedIn</a>.
-      </p>
-    </div>
-    <img class="profile-img" src="https://raw.githubusercontent.com/nidhihomey/nidhihomey.github.io/main/me_2023_dp_Nidhi-Homey-Parayil.jpeg" alt="Nidhi Homey profile photo" />
-  </header>
+  <nav>
+    <ul>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#leadership">Other Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <main>
-    <section>
-      <h2>Education</h2>
-      <p><strong>Ph.D.</strong> in Agricultural Robotics, Queensland University of Technology (QUT), Ongoing</p>
-      <p><strong>Master's</strong> in Robotics with Minor in AI, Oregon State University, USA, Jan 2021 – Dec 2022</p>
-      <p><strong>Bachelor's</strong> in Production Engineering, National Institute of Technology Calicut, India, 2015 – 2019</p>
-    </section>
+  <div class="content">
+    <header>
+      <div class="bio">
+        <h1><strong>Nidhi</strong> Parayil</h1>
+        <p>PhD candidate in Agricultural Robotics</p>
+        <p>
+          I am a researcher focused on agricultural robotics, automation, and intelligent systems. My background spans undergraduate robotics competitions, project assistantship, and PhD research at QUT.
+          I am particularly interested in how robotics can support sustainable agriculture.
+        </p>
+        <p id="contact">
+          Connect with me on
+          <a href="#">Google Scholar</a>,
+          <a href="#">ResearchGate</a>, and
+          <a href="#">LinkedIn</a>.
+        </p>
+      </div>
+      <img class="profile-img" src="https://raw.githubusercontent.com/nidhihomey/nidhihomey.github.io/main/me_2023_dp_Nidhi-Homey-Parayil.jpeg" alt="Nidhi Homey profile photo" />
+    </header>
 
-    <section>
-      <h2>Research & Academic Projects</h2>
-      <div class="project-item">
-        <div class="project-text">
-          <strong>PhD Research:</strong> Physical interaction in cluttered canopy environment
-        </div>
-        <img src="https://via.placeholder.com/200" alt="PhD Research Placeholder" class="project-img" />
-      </div>
-      <div class="project-item">
-        <div class="project-text">
-          <strong>Master's Project:</strong> Vision-based Follow-the-Leader branch controller to detect pruning points on sweet cherry trees. <a href="#">Paper link</a>
-        </div>
-        <img src="https://via.placeholder.com/200" alt="Master's Project Placeholder" class="project-img" />
-      </div>
-      <div class="project-item">
-        <div class="project-text">
-          <strong>Internship Project:</strong> As a Project Assistant with Dr. Dinesh at Indian Institute of Science, contributed to the design of a six-axis robot for prenatal scanning
-        </div>
-        <img src="https://via.placeholder.com/200" alt="Internship Project Placeholder" class="project-img" />
-      </div>
-      <div class="project-item">
-        <div class="project-text">
-          <strong>Bachelor's Major Project:</strong> Dual-arm robot for basic household tasks. <a href="#">Paper link</a>
-        </div>
-        <img src="https://via.placeholder.com/200" alt="Bachelor's Project Placeholder" class="project-img" />
-      </div>
-      <div class="project-item">
-        <div class="project-text">
-          <strong>Design Project:</strong> Low-cost hospital bed for bedridden patients to prevent bedsores. <a href="#">Patent link</a>
-        </div>
-        <img src="https://via.placeholder.com/200" alt="Design Project Placeholder" class="project-img" />
-      </div>
-    </section>
+    <main>
+      <section id="education">
+        <h2>Education</h2>
+        <p><strong>Ph.D.</strong> in Agricultural Robotics, Queensland University of Technology (QUT), Ongoing</p>
+        <p><strong>Master's</strong> in Robotics with Minor in AI, Oregon State University, USA, Jan 2021 – Dec 2022</p>
+        <p><strong>Bachelor's</strong> in Production Engineering, National Institute of Technology Calicut, India, 2015 – 2019</p>
+      </section>
 
-    <section>
-      <h2>Side Projects & Hobbies</h2>
-      <ul>
-        <li>DIY garden drone for plant health monitoring</li>
-        <li>Arduino-based smart compost bin</li>
-        <li>Participated in robotics hackathons and national competitions</li>
-      </ul>
-    </section>
+      <section id="research">
+        <h2>Research & Academic Projects</h2>
+        <div class="project-item">
+          <div class="project-text">
+            <strong>PhD Research:</strong> Physical interaction in cluttered canopy environment
+          </div>
+          <img src="https://via.placeholder.com/200" alt="PhD Research Placeholder" class="project-img" />
+        </div>
+        <div class="project-item">
+          <div class="project-text">
+            <strong>Master's Project:</strong> Vision-based Follow-the-Leader branch controller to detect pruning points on sweet cherry trees. <a href="#">Paper link</a>
+          </div>
+          <img src="https://via.placeholder.com/200" alt="Master's Project Placeholder" class="project-img" />
+        </div>
+        <div class="project-item">
+          <div class="project-text">
+            <strong>Internship Project:</strong> As a Project Assistant with Dr. Dinesh at Indian Institute of Science, contributed to the design of a six-axis robot for prenatal scanning
+          </div>
+          <img src="https://via.placeholder.com/200" alt="Internship Project Placeholder" class="project-img" />
+        </div>
+        <div class="project-item">
+          <div class="project-text">
+            <strong>Bachelor's Major Project:</strong> Dual-arm robot for basic household tasks. <a href="#">Paper link</a>
+          </div>
+          <img src="https://via.placeholder.com/200" alt="Bachelor's Project Placeholder" class="project-img" />
+        </div>
+        <div class="project-item">
+          <div class="project-text">
+            <strong>Design Project:</strong> Low-cost hospital bed for bedridden patients to prevent bedsores. <a href="#">Patent link</a>
+          </div>
+          <img src="https://via.placeholder.com/200" alt="Design Project Placeholder" class="project-img" />
+        </div>
+      </section>
 
-    <section>
-      <h2>Leadership & Involvement</h2>
-      <ul>
-        <li>Mentor, Women in STEM QUT</li>
-        <li>Student lead, Undergrad Robotics Club</li>
-        <li>Organized QUT AgTech Innovation Challenge</li>
-      </ul>
-    </section>
-  </main>
+      <section id="hobbies">
+        <h2>Side Projects & Hobbies</h2>
+        <ul>
+          <li>DIY garden drone for plant health monitoring</li>
+          <li>Arduino-based smart compost bin</li>
+          <li>Participated in robotics hackathons and national competitions</li>
+        </ul>
+      </section>
 
-  <footer>
-    <p>© 2025 Nidhi Parayil. All rights reserved.</p>
-  </footer>
+      <section id="leadership">
+        <h2>Leadership & Involvement</h2>
+        <ul>
+          <li>Mentor, Women in STEM QUT</li>
+          <li>Student lead, Undergrad Robotics Club</li>
+          <li>Organized QUT AgTech Innovation Challenge</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Nidhi Parayil. All rights reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
