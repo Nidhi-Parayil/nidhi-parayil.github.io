@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -53,13 +57,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      gap: 40px;
+      flex-wrap: nowrap;
       max-width: 1000px;
-      margin: 0 auto;
+      margin: 0 auto 40px auto;
     }
 
     .bio {
-      max-width: 600px;
+      flex: 1;
     }
 
     .bio h1 {
