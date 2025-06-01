@@ -138,7 +138,7 @@ h3 {
 
 .project-img,
 video.project-img {
-  width: 100%;
+  width: 75%;
   max-width: 750px;
   height: auto;
   border-radius: 10px;
