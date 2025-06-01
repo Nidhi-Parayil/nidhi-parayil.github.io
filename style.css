@@ -118,6 +118,27 @@ h3 {
   margin-top: 30px;
 }
 
+ul li::before {
+  content: "O";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--bullet);     /* uses the green from :root */
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+}
+
+
+ul.green-bullets li::before {
+  content: "O";
+  color: var(--bullet);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+
 .project-item {
   display: flex;
   justify-content: space-between;
