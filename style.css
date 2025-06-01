@@ -52,7 +52,9 @@ nav ul li a {
   font-weight: bold;
   font-size: 18px;
 }
-
+nav ul li::before {
+  content: none;
+}
 nav ul li a:hover {
   text-decoration: underline;
   color: var(--accent);
