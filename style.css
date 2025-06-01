@@ -159,7 +159,7 @@ ul.green-bullets li::before {
 
 .project-img,
 video.project-img {
-  width: 100%;
+  width: 50%;
   max-width: 750px;
   height: auto;
   border-radius: 10px;
