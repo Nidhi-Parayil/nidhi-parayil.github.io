@@ -145,6 +145,33 @@ video.project-img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.bachelor-projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bachelor-major {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bachelor-major video {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bachelor-design {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .gallery img {
   width: 45%;
   height: auto;
