@@ -439,3 +439,25 @@ footer {
   border: 0;
   border-radius: 18px;
 }
+
+
+.project-links {
+  margin-top: 18px;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+  background: #234a24;
+  transform: translateY(-1px);
+  color: white;
+}
