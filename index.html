@@ -4,151 +4,928 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nidhi Homey Parayil | Robotics Researcher</title>
-  <meta name="description" content="Official page of Nidhi Homey Parayil, a PhD researcher in agricultural robotics at QUT. Explore her research, publications, and academic journey.">
-  <meta name="keywords" content="Nidhi Homey, Nidhi Parayil, robotics, agricultural robotics, QUT, Oregon State University, NIT Calicut, pruning robot, AI">
-  <meta name="author" content="Nidhi Homey Parayil">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta
+    name="description"
+    content="Official page of Nidhi Homey Parayil, a PhD researcher in agricultural robotics at QUT. Explore her research, publications, and academic journey."
+  />
+  <meta
+    name="keywords"
+    content="Nidhi Homey, Nidhi Parayil, robotics, agricultural robotics, QUT, Oregon State University, NIT Calicut, pruning robot, AI"
+  />
+  <meta name="author" content="Nidhi Homey Parayil" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #21462a;
+      --primary-strong: #17331e;
+      --accent: #8fbe5b;
+      --accent-soft: #eef6e7;
+      --bg: #f6faf5;
+      --surface: #ffffff;
+      --surface-soft: #f2f7f1;
+      --text: #1c241e;
+      --muted: #5f6b62;
+      --border: #dfe7de;
+      --shadow: 0 12px 32px rgba(17, 38, 24, 0.08);
+      --shadow-soft: 0 8px 24px rgba(17, 38, 24, 0.05);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --max-width: 1160px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #eef7ec 0, transparent 28%),
+        linear-gradient(to bottom, #f4f8f3 0%, #f6faf5 100%);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary-strong);
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.82);
+      border-bottom: 1px solid rgba(33, 70, 42, 0.08);
+    }
+
+    .nav-inner {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 76px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      position: relative;
+      font-size: 0.96rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--primary);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    nav a:hover::after,
+    nav a:focus-visible::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 26px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 360px);
+      gap: 48px;
+      align-items: center;
+      padding: 56px;
+      margin: 8px 0 72px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--primary);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: var(--primary-strong);
+    }
+
+    .hero p {
+      margin: 0 0 18px;
+      max-width: 68ch;
+      font-size: 1.04rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--primary);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .profile-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1 / 1.08;
+      object-fit: cover;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    section {
+      margin-bottom: 72px;
+      padding: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--primary-strong);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.28rem;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+
+    h4 {
+      margin: 0 0 10px;
+      font-size: 1.06rem;
+      color: var(--primary);
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 430px);
+      gap: 30px;
+      align-items: center;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 22px;
+    }
+
+    .project-card.reverse {
+      direction: rtl;
+    }
+
+    .project-card.reverse > * {
+      direction: ltr;
+    }
+
+    .project-meta {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .project-media img,
+    .project-media video {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      object-fit: cover;
+      background: #eaf1e8;
+    }
+
+    ul.clean-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+    }
+
+    ul.clean-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    ul.clean-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.76em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-50%);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .info-card {
+      padding: 26px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .field-day {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .field-day img {
+      width: min(100%, 760px);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-box {
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+    }
+
+    .contact-icons {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .icon-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 56px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .icon-link img {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    footer {
+      padding-top: 4px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .project-card,
+      .contact-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.reverse {
+        direction: ltr;
+      }
+
+      .hero {
+        padding: 34px;
+        gap: 30px;
+      }
+
+      section {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container,
+      .nav-inner {
+        width: min(var(--max-width), calc(100% - 20px));
+      }
+
+      nav {
+        position: sticky;
+      }
+
+      .nav-inner {
+        min-height: auto;
+        padding: 14px 0;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 14px 18px;
+      }
+
+      nav a {
+        font-size: 0.92rem;
+      }
+
+      main {
+        padding-top: 18px;
+      }
+
+      .hero,
+      section {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p,
+      .section-heading p,
+      ul.clean-list li {
+        font-size: 0.97rem;
+      }
+
+      .project-card,
+      .info-card,
+      .contact-box {
+        padding: 20px;
+      }
+
+      .gallery,
+      .contact-icons {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#hobbies">Other Projects</a></li>
-      <li><a href="#leadership">Other Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Other Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
-  <div class="content">
-    <header id="about">
-      <div class="bio">
+
+  <main class="container">
+    <header class="hero" id="about">
+      <div>
+        <div class="eyebrow">PhD Student · QUT Centre for Robotics</div>
         <h1>Nidhi Homey Parayil</h1>
-        <p>PhD student, QUT Centre for Robotics</p>
-        <p>Hi, I’m Nidhi Parayil, a PhD researcher at QUT, working with Dr. Chris Lehnert on agricultural robotics. My research focuses on one of the most overlooked yet essential challenges in agri-tech: how robots can physically interact with plants (such as pruning and harvesting) and navigate through canopies where visibility is limited, and softness, fragility, and variation are the norm.</p>
-        <p>I’m exploring tactile sensors, vision algorithms, and deformable object simulations to help robots “feel” their way through tasks because traditional perception just isn’t enough. Leaves block the camera. Shrubs push back. And today’s robots? They still try to pick fruit without touching a single branch, which any human knows is impossible.</p>
-        <p>To me, sustainability is more than a research goal, it’s the key to a peaceful life. I believe that robotics should support both productivity and ecological balance. My dream isn't to build the perfect machine overnight, it's simply to take one step closer than where we are now.</p>
+
+        <p>
+          Hi, I’m Nidhi Parayil, a PhD researcher at QUT working with Dr. Chris
+          Lehnert on agricultural robotics. My research focuses on one of the
+          most overlooked yet essential challenges in agri-tech: how robots can
+          physically interact with plants and navigate cluttered canopies where
+          visibility is limited and softness, fragility, and variation are the norm.
+        </p>
+
+        <p>
+          I explore tactile sensing, vision algorithms, and deformable object
+          simulation to help robots “feel” their way through tasks when
+          traditional perception is not enough. Leaves block the camera, shrubs
+          push back, and real agricultural environments rarely behave like clean
+          laboratory scenes.
+        </p>
+
+        <p>
+          To me, sustainability is more than a research theme. It is part of how
+          technology should serve people, food systems, and the environment. My
+          goal is not to build the perfect machine overnight, but to move one
+          meaningful step closer to robots that can work safely and intelligently
+          in the natural world.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#research">View Research</a>
+          <a class="btn" href="#contact">Get in Touch</a>
+        </div>
       </div>
-      <img class="profile-img" src="https://raw.githubusercontent.com/nidhihomey/nidhihomey.github.io/main/nidhi_robot.jpg" alt="Nidhi Homey profile photo" />
+
+      <div class="profile-wrap">
+        <img
+          class="profile-img"
+          src="https://raw.githubusercontent.com/nidhihomey/nidhihomey.github.io/main/nidhi_robot.jpg"
+          alt="Nidhi Homey Parayil profile photo"
+        />
+      </div>
     </header>
 
     <section id="research">
-      <h2>Research & Academic Projects</h2>
+      <div class="section-heading">
+        <h2>Research & Academic Projects</h2>
+        <p>
+          My work sits at the intersection of agricultural robotics, physical
+          interaction, perception under occlusion, and learning for manipulation
+          in deformable environments.
+        </p>
+      </div>
 
-      <h3>PhD Research:</h3>
-      <h3>Physical interaction in cluttered canopy environment</h3>
-      <div class="project-item">
-        <div class="project-text">
-          <p>Plants aren’t rigid or predictable. They bend, break, and hide what matters — and they don’t tell you when you’ve hurt them. My research explores how to model these properties so that robots can learn to interact safely and effectively. That includes:</p>
-          <ul class="green-bullets">
+      <article class="project-card">
+        <div>
+          <div class="project-meta">PhD Research</div>
+          <h3>Physical Interaction in Cluttered Canopy Environments</h3>
+          <p>
+            Plants are not rigid or predictable. They bend, break, and obscure
+            what matters, and they do not tell you when they have been damaged.
+            My research explores how these properties can be modeled so that
+            robots can interact safely and effectively in canopy environments.
+          </p>
+
+          <ul class="clean-list">
             <li>Physical interaction under occlusion</li>
-            <li>Tactile sensing for leaf/branch contact</li>
-            <li>Simulating deformable plants for robot training</li>
-            <li>Vision + force integration for perception in the wild</li>
+            <li>Tactile sensing for leaf and branch contact</li>
+            <li>Simulation of deformable plants for robot training</li>
+            <li>Vision and force integration for perception in the wild</li>
           </ul>
-          <p>I'm working to build plant-aware robotics that don’t just avoid nature, but learn to engage with it — across large-scale farms and small home gardens alike.</p>
+
+          <p>
+            I aim to build plant-aware robotic systems that do not simply avoid
+            nature, but learn how to engage with it safely and usefully across
+            large farms and small growing systems alike.
+          </p>
         </div>
-        <img src="https://via.placeholder.com/300x200" alt="PhD Research Placeholder" class="project-img" />
-      </div>
 
-      <h3>Master's Project: Follow-the-Leader Branch Controller</h3>
-      <div class="project-item">
-        <div class="project-text">
-          <p>Worked on robotic pruning with Dr. Davidson as part of the <a href="https://agaid.org/">AgAid</a> Labour in collaboration with WSU. I worked on automating pruning tasks in sweet cherry orchards a labour-intensive seasonal activity currently facing severe workforce shortages. My contribution focused on developing a vision-based algorithm for robotic arms to follow "leader branches" in espalier-trained cherry trees.</p>
-        <p>We used an eye-in-hand camera configuration, where the camera was mounted on the robotic arm, enabling dynamic visual tracking along the branches. This continuous tracking was critical for locating valid pruning points and ensuring safe interaction without damaging surrounding plant structures.</p>
-        <p>The project culminated in a 5-day field trial on an operational farm,  an eye-opening experience that highlighted the real-world gap between lab robotics and field performance. Exposure to unpredictable lighting and irregular plant geometry gave me an understanding of the need for robust perception and control in agricultural settings. <a href="https://scholar.google.com.au/citations?view_op=view_citation&hl=en&user=MO491E0AAAAJ&citation_for_view=MO491E0AAAAJ:qjMakFHDy7sC">Read Paper</a></p>
-        <p> even without leaves, navigating branch structure proved challenging. That experience strongly influenced my PhD direction: I realized how significantly occlusion from foliage complicates physical interaction, perception, and planning in agricultural environments. Understanding and solving that complexity became the core motivation for my current research.</p>
+        <div class="project-media">
+          <img
+            src="https://via.placeholder.com/900x620"
+            alt="Illustration placeholder for PhD research project"
+          />
         </div>
-        <img src="https://raw.githubusercontent.com/nidhihomey/nidhihomey.github.io/main/Nidhi-Homey-Parayil.jpeg" alt="Master's Project Placeholder" class="project-img" style="width: 40%; max-width: 750px; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);" />
-      </div>
+      </article>
 
-      <h3>Internship: Six-axis Prenatal Scanning Robot at IISc</h3>
-      <div class="project-item">
-        <div class="project-text">
-          <p>At IISc Bangalore, I worked with Dr. Dinesh's lab to bring a custom-built six-axis robot to life for prenatal scanning. My role focused on integrating ROS with the robot’s CAN bus to enable motion control. </p>
-          <p>As someone from a production engineering background with limited coding experience, it was a steep but transformative learning curve. I also got my first exposure to modeling deformable objects, understanding how the robot might safely interact with the human abdomen. Though the project was exploratory, it introduced me to the complexity of soft-body interaction and sparked my current research focus.</p>
+      <article class="project-card reverse">
+        <div>
+          <div class="project-meta">Master’s Project</div>
+          <h3>Follow-the-Leader Branch Controller for Robotic Pruning</h3>
+          <p>
+            I worked on robotic pruning with Dr. Davidson as part of the
+            <a href="https://agaid.org/" target="_blank" rel="noopener noreferrer">AgAid</a>
+            collaboration with WSU. The project focused on automating pruning in
+            sweet cherry orchards, a labour-intensive seasonal task facing major
+            workforce shortages.
+          </p>
+
+          <p>
+            My contribution was a vision-based algorithm that enabled a robotic
+            arm to follow leader branches in espalier-trained cherry trees using
+            an eye-in-hand camera. Continuous branch tracking was critical for
+            locating valid pruning points and interacting safely without damaging
+            surrounding structures.
+          </p>
+
+          <p>
+            The project culminated in a five-day field trial on an operational
+            farm, which highlighted the gap between laboratory robotics and real
+            field performance. Exposure to irregular plant geometry and changing
+            lighting conditions shaped my understanding of robust agricultural
+            perception and control.
+            <a
+              href="https://scholar.google.com.au/citations?view_op=view_citation&hl=en&user=MO491E0AAAAJ&citation_for_view=MO491E0AAAAJ:qjMakFHDy7sC"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read paper
+            </a>
+          </p>
+
+          <p>
+            Even without leaves, navigating branch structure was challenging.
+            That experience strongly influenced my PhD direction and motivated my
+            current focus on occlusion, physical interaction, and planning in
+            cluttered plant environments.
+          </p>
+        </div>
+
+        <div class="project-media">
+          <img
+            src="https://raw.githubusercontent.com/nidhihomey/nidhihomey.github.io/main/Nidhi-Homey-Parayil.jpeg"
+            alt="Master's project in orchard robotics"
+          />
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div>
+          <div class="project-meta">Internship</div>
+          <h3>Six-Axis Prenatal Scanning Robot at IISc</h3>
+          <p>
+            At IISc Bangalore, I worked with Dr. Dinesh’s lab on a custom-built
+            six-axis robot for prenatal scanning. My role focused on integrating
+            ROS with the robot’s CAN bus to enable motion control.
+          </p>
+
+          <p>
+            Coming from a production engineering background with limited coding
+            experience at the time, this was a steep but transformative learning
+            curve. I was also introduced to the challenges of soft-body
+            interaction and the importance of modeling deformable environments
+            for safe robot deployment.
+          </p>
+
+          <p>
+            Although the project was exploratory, it became an important early
+            step toward my current research interests in physical interaction,
+            deformable object behavior, and safe robot manipulation.
+          </p>
+        </div>
+
+        <div class="project-media">
+          <img
+            src="https://via.placeholder.com/900x620"
+            alt="Placeholder image for prenatal scanning robot project"
+          />
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div>
+          <div class="project-meta">Bachelor’s Project</div>
+          <h3>Coordinated Dual-Arm Household Robot</h3>
+          <p>
+            Under the supervision of Dr. Sudheer A. P., I worked on the design
+            and development of a dual-arm household robot for simple domestic
+            tasks such as pouring water from a bottle into a cup.
+          </p>
+
+          <p>
+            The robot was dynamically analyzed and built using Dynamixel motors.
+            Object detection was implemented using YOLO with color markers and
+            RGB input. The project also involved dynamics simulation in ANSYS
+            and ADAMS, along with programming in Python and MATLAB.
+          </p>
+
+          <p>
+            This hands-on experience with mechanical design, basic vision, and
+            physical coordination formed an early foundation for my later work
+            in manipulation and embodied robotics.
+            <a
+              href="https://www.jamris.org/index.php/JAMRIS/article/view/529"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read paper
+            </a>
+          </p>
+        </div>
+
+        <div class="project-media">
+          <video autoplay loop muted playsinline controls>
+            <source src="MajorProject.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </article>
+
+      <div class="two-col">
+        <div class="info-card">
+          <div class="project-meta">Design Project</div>
+          <h3>Hospital Bed for Bedsore Prevention</h3>
+          <p>
+            I developed a low-cost hospital bed concept aimed at helping prevent
+            bedsores in bedridden patients.
+          </p>
+          <p>
+            Patent granted: <strong>516724</strong><br />
+            <a
+              href="https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/PatentDetails"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View patent information
+            </a>
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="project-meta">Focus Areas</div>
+          <h3>Core Themes Across My Work</h3>
+          <ul class="clean-list">
+            <li>Robot interaction with deformable and fragile environments</li>
+            <li>Perception under occlusion in agricultural settings</li>
+            <li>Embodied sensing using touch and vision</li>
+            <li>Field-relevant robot learning and manipulation</li>
+          </ul>
         </div>
       </div>
-
-  <h3>Bachelors Projects</h3>
-  <div class="bachelor-projects">
-  
-  <video autoplay loop muted playsinline>
-    <source src="MajorProject.mp4" type="video/mp4" />
-  </video>
-  <div class="bachelor-text">
-    <div>
-      <h4>Major Project: Coordinated Dual Arm Robot</h4>
-      <p>
-        Designed a dual-arm household robot for simple domestic tasks, focusing on coordinated manipulation under the supervision of Dr. Sudheer A. P. We designed and fabricated an anthropomorphic dual-arm robot aimed at performing simple domestic tasks such as pouring water from a bottle into a cup. The arms were dynamically analyzed and built using Dynamixel motors. Object detection was implemented using YOLO with color markers, using only RGB input. Though coordination and control were minimal, the project involved simulating dynamics in ANSYS and ADAMS, with programming in Python and MATLAB. This hands-on experience with design, basic vision, and physical coordination was foundational to my later work in manipulation.
-        <a href="https://www.jamris.org/index.php/JAMRIS/article/view/529">Read Paper</a>
-      </p>
-    </div>
-    <div>
-      <h4>Design Project: Bed for Bedsore Prevention</h4>
-      <p>
-        Created a low-cost hospital bed to help prevent bedsores in bedridden patients.
-        Patent granted: <strong>516724</strong>. 
-        <a href="https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/PatentDetails">Patent link</a>
-      </p>
-    </div>
-  </div>
-</div>
-
     </section>
 
-    </section>
+    <section id="projects">
+      <div class="section-heading">
+        <h2>Other Projects</h2>
+        <p>
+          Earlier projects that shaped my interest in mechatronics, mobility,
+          robotics competitions, and practical engineering.
+        </p>
+      </div>
 
-    <section id="hobbies">
-      <h2>Other Projects</h2>
-      <ul>
-        <li>Stair Climbing Trolley with Ackerman Steering</li>
-        <li>Dual-arm Domestic Robot (<a href="https://www.jamris.org/index.php/JAMRIS/article/view/529">Paper</a>)</li>
-        <li>Participated in RoboCon 2017 & 2018</li>
-      </ul>
+      <div class="two-col">
+        <div class="info-card">
+          <h3>Engineering & Robotics Projects</h3>
+          <ul class="clean-list">
+            <li>Stair-climbing trolley with Ackermann steering</li>
+            <li>
+              Dual-arm domestic robot
+              (<a
+                href="https://www.jamris.org/index.php/JAMRIS/article/view/529"
+                target="_blank"
+                rel="noopener noreferrer"
+              >paper</a>)
+            </li>
+            <li>Participation in RoboCon 2017 and 2018</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Competition & Build Experience</h3>
+          <p>
+            Working on competitive robotics teams gave me practical experience in
+            design iteration, integration under time pressure, and building
+            systems that had to work outside idealized conditions.
+          </p>
+        </div>
+      </div>
+
       <div class="gallery">
-        <img src="rig_robocon.jpg" alt="RoboCon 2018" />
-        <img src="robocon18.jpg" alt="RoboCon 2017" />
+        <img src="rig_robocon.jpg" alt="RoboCon team project" />
+        <img src="robocon18.jpg" alt="RoboCon competition photo" />
+      </div>
+
+      <div class="field-day">
+        <img src="westech_feild_day.jpg" alt="Field day photo" />
       </div>
     </section>
 
-    <section id="leadership">
-      <h2>Other Experience</h2>
-      <ul>
-        <li>Tutor at QUT (2024–ongoing)</li>
-        <li>Teaching Assistant at OSU</li>
-        <li>Student Representative: QUT QCR & NITC</li>
-      </ul>
+    <section id="experience">
+      <div class="section-heading">
+        <h2>Other Experience</h2>
+        <p>
+          Teaching, mentoring, and student leadership have been an important part
+          of my academic development alongside research.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="info-card">
+          <h3>Teaching</h3>
+          <ul class="clean-list">
+            <li>Tutor at QUT (2024–ongoing)</li>
+            <li>Teaching Assistant at Oregon State University</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Leadership</h3>
+          <ul class="clean-list">
+            <li>Student Representative at QUT Centre for Robotics</li>
+            <li>Student Representative at NIT Calicut</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="contact">
-      <h2>Collaboration & Open Research Interests</h2>
-  <p>If you’re a student, researcher, or enthusiast interested in sustainable agriculture, robotic manipulation, plant modeling, or generalist Ag-AI systems, I’m always open to conversations, collaboration, or brainstorming. Some directions I’d love to explore together:</p>
-  <ul>
-    <li>Designing cost-effective, scalable agri-robotics tools for small farms and household gardens</li>
-    <li>Modeling plant deformation across different species for safe physical interaction</li>
-    <li>Creating realistic plant simulations for robot training and testing</li>
-    <li>Developing generalist agricultural AI for crop rotation, pruning, harvesting, and sustainable farm management</li>
-  </ul>
-  <p>Whether you're working in academia, industry, or just have an idea you want to prototype, feel free to reach out. Let's make robotics serve sustainability.</p>
-      <div class="contact-icons">
-        <a href="mailto:nidhihomey.parayil@hdr.qut.edu.au"><img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email"></a>
-        <a href="https://www.linkedin.com/in/nidhi-homey/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn"></a>
-        <a href="https://github.com/Nidhi-Parayil" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub"></a>
-        <a href="https://scholar.google.com/citations?user=MO491E0AAAAJ&hl=en" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/google-scholar.png" alt="Google Scholar"></a>
-        <a href="https://orcid.org/0009-0009-0864-8323" target="_blank"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID"></a>
+      <div class="section-heading">
+        <h2>Collaboration & Open Research Interests</h2>
+        <p>
+          I am open to conversations, collaboration, and exploratory ideas around
+          agricultural robotics, sustainable automation, plant-aware robot
+          interaction, and scalable field systems.
+        </p>
       </div>
-      
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>Topics I would love to explore together</h3>
+          <ul class="clean-list">
+            <li>Cost-effective agri-robotics tools for small farms and gardens</li>
+            <li>Plant deformation modeling for safe physical interaction</li>
+            <li>Realistic plant simulation for robot training and testing</li>
+            <li>Generalist agricultural AI for pruning, harvesting, and crop management</li>
+          </ul>
+
+          <p>
+            Whether you work in academia, industry, or are simply building an
+            interesting idea, feel free to reach out.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <h3>Connect</h3>
+          <div class="contact-icons">
+            <a class="icon-link" href="mailto:nidhihomey.parayil@hdr.qut.edu.au">
+              <img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email icon" />
+              <span>Email</span>
+            </a>
+
+            <a
+              class="icon-link"
+              href="https://www.linkedin.com/in/nidhi-homey/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn icon" />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              class="icon-link"
+              href="https://github.com/Nidhi-Parayil"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub icon" />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              class="icon-link"
+              href="https://scholar.google.com/citations?user=MO491E0AAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://img.icons8.com/ios-filled/50/000000/google-scholar.png" alt="Google Scholar icon" />
+              <span>Scholar</span>
+            </a>
+
+            <a
+              class="icon-link"
+              href="https://orcid.org/0009-0009-0864-8323"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID icon" />
+              <span>ORCID</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
-          <div class="gallery">
-  <centre>
-<img src="westech_feild_day.jpg" />
-  </centre>
-      </div>
-            
+
     <footer>
-      <p>© 2025 Nidhi Parayil. All rights reserved.</p>
+      <p>© 2026 Nidhi Homey Parayil. All rights reserved.</p>
     </footer>
-  </div>
+  </main>
 </body>
 </html>
