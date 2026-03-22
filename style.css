@@ -549,3 +549,8 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.rice-video {
+  width: 70%;
+  margin: 8px auto 0;
+}
