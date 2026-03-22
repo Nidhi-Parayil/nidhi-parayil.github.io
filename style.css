@@ -553,7 +553,7 @@ footer {
 .large-video.rice-video {
   display: block;
   width: 60%;
-  max-width: 460px;
+  max-width: 360px;
   margin: 8px auto 0;
 }
 
