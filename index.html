@@ -13,6 +13,7 @@
     content="Nidhi Homey, Nidhi Parayil, robotics, agricultural robotics, QUT, Oregon State University, NIT Calicut, pruning robot, AI"
   />
   <meta name="author" content="Nidhi Homey Parayil" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -20,498 +21,7 @@
     rel="stylesheet"
   />
 
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #21462a;
-      --primary-strong: #17331e;
-      --accent: #8fbe5b;
-      --accent-soft: #eef6e7;
-      --bg: #f6faf5;
-      --surface: #ffffff;
-      --surface-soft: #f2f7f1;
-      --text: #1c241e;
-      --muted: #5f6b62;
-      --border: #dfe7de;
-      --shadow: 0 12px 32px rgba(17, 38, 24, 0.08);
-      --shadow-soft: 0 8px 24px rgba(17, 38, 24, 0.05);
-      --radius-lg: 28px;
-      --radius-md: 20px;
-      --radius-sm: 14px;
-      --max-width: 1160px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, #eef7ec 0, transparent 28%),
-        linear-gradient(to bottom, #f4f8f3 0%, #f6faf5 100%);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    img,
-    video {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    a:hover {
-      color: var(--primary-strong);
-    }
-
-    .container {
-      width: min(var(--max-width), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(255, 255, 255, 0.82);
-      border-bottom: 1px solid rgba(33, 70, 42, 0.08);
-    }
-
-    .nav-inner {
-      width: min(var(--max-width), calc(100% - 32px));
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 76px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav li {
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      position: relative;
-      font-size: 0.96rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      color: var(--primary);
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.25s ease;
-    }
-
-    nav a:hover::after,
-    nav a:focus-visible::after {
-      width: 100%;
-    }
-
-    main {
-      padding: 26px 0 72px;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 360px);
-      gap: 48px;
-      align-items: center;
-      padding: 56px;
-      margin: 8px 0 72px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--primary);
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-
-    .hero h1 {
-      margin: 0 0 16px;
-      font-size: clamp(2.6rem, 5vw, 4.4rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      color: var(--primary-strong);
-    }
-
-    .hero p {
-      margin: 0 0 18px;
-      max-width: 68ch;
-      font-size: 1.04rem;
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--primary);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .btn.primary {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .profile-wrap {
-      display: flex;
-      justify-content: center;
-    }
-
-    .profile-img {
-      width: 100%;
-      max-width: 360px;
-      aspect-ratio: 1 / 1.08;
-      object-fit: cover;
-      border-radius: 26px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    section {
-      margin-bottom: 72px;
-      padding: 40px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-    }
-
-    .section-heading {
-      margin-bottom: 28px;
-    }
-
-    .section-heading h2 {
-      margin: 0 0 10px;
-      font-size: clamp(1.8rem, 2.6vw, 2.4rem);
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      color: var(--primary-strong);
-    }
-
-    .section-heading p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 70ch;
-    }
-
-    h3 {
-      margin: 0 0 10px;
-      font-size: 1.28rem;
-      line-height: 1.3;
-      color: var(--primary);
-    }
-
-    h4 {
-      margin: 0 0 10px;
-      font-size: 1.06rem;
-      color: var(--primary);
-    }
-
-    p {
-      margin: 0 0 16px;
-    }
-
-    .project-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 430px);
-      gap: 30px;
-      align-items: center;
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: var(--surface-soft);
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 22px;
-    }
-
-    .project-card.reverse {
-      direction: rtl;
-    }
-
-    .project-card.reverse > * {
-      direction: ltr;
-    }
-
-    .project-meta {
-      display: inline-flex;
-      margin-bottom: 12px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid var(--border);
-      color: var(--primary);
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-
-    .project-media img,
-    .project-media video {
-      width: 100%;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-      object-fit: cover;
-      background: #eaf1e8;
-    }
-
-    ul.clean-list {
-      list-style: none;
-      margin: 14px 0 0;
-      padding: 0;
-    }
-
-    ul.clean-list li {
-      position: relative;
-      padding-left: 24px;
-      margin-bottom: 12px;
-      color: var(--muted);
-    }
-
-    ul.clean-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.76em;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      transform: translateY(-50%);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .info-card {
-      padding: 26px;
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .field-day {
-      margin-top: 26px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .field-day img {
-      width: min(100%, 760px);
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .contact-box {
-      padding: 24px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      background: var(--surface-soft);
-    }
-
-    .contact-icons {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .icon-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 56px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      box-shadow: var(--shadow-soft);
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .icon-link img {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-    }
-
-    footer {
-      padding-top: 4px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    @media (max-width: 960px) {
-      .hero,
-      .project-card,
-      .contact-grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card.reverse {
-        direction: ltr;
-      }
-
-      .hero {
-        padding: 34px;
-        gap: 30px;
-      }
-
-      section {
-        padding: 30px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container,
-      .nav-inner {
-        width: min(var(--max-width), calc(100% - 20px));
-      }
-
-      nav {
-        position: sticky;
-      }
-
-      .nav-inner {
-        min-height: auto;
-        padding: 14px 0;
-      }
-
-      nav ul {
-        justify-content: center;
-        gap: 14px 18px;
-      }
-
-      nav a {
-        font-size: 0.92rem;
-      }
-
-      main {
-        padding-top: 18px;
-      }
-
-      .hero,
-      section {
-        padding: 22px;
-        border-radius: 22px;
-      }
-
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero p,
-      .section-heading p,
-      ul.clean-list li {
-        font-size: 0.97rem;
-      }
-
-      .project-card,
-      .info-card,
-      .contact-box {
-        padding: 20px;
-      }
-
-      .gallery,
-      .contact-icons {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -529,7 +39,7 @@
 
   <main class="container">
     <header class="hero" id="about">
-      <div>
+      <div class="hero-copy">
         <div class="eyebrow">PhD Student · QUT Centre for Robotics</div>
         <h1>Nidhi Homey Parayil</h1>
 
@@ -582,80 +92,80 @@
         </p>
       </div>
 
-<article class="project-card single-column">
-  <div class="project-text">
-    <div class="project-meta">PhD Research</div>
-    <h3>Physical Interaction in Cluttered Canopy Environments</h3>
+      <article class="project-card single-column">
+        <div class="project-text">
+          <div class="project-meta">PhD Research</div>
+          <h3>Physical Interaction in Cluttered Canopy Environments</h3>
 
-    <p>
-      My PhD research focuses on how robots can move safely through cluttered
-      plant canopies where visibility is limited and physical interaction is unavoidable.
-      Instead of treating contact as failure, I study how robots can use tactile
-      feedback and interaction-aware control to navigate dense foliage more safely
-      and intelligently.
-    </p>
+          <p>
+            My PhD research focuses on how robots can move safely through cluttered
+            plant canopies where visibility is limited and physical interaction is unavoidable.
+            Instead of treating contact as failure, I study how robots can use tactile
+            feedback and interaction-aware control to navigate dense foliage more safely
+            and intelligently.
+          </p>
 
-    <ul class="clean-list">
-      <li>Physical interaction under strong visual occlusion</li>
-      <li>Tactile sensing for leaf and branch contact</li>
-      <li>Reactive control for contact-rich canopy navigation</li>
-      <li>Robot behaviour in deformable plant environments</li>
-    </ul>
+          <ul class="clean-list">
+            <li>Physical interaction under strong visual occlusion</li>
+            <li>Tactile sensing for leaf and branch contact</li>
+            <li>Reactive control for contact-rich canopy navigation</li>
+            <li>Robot behaviour in deformable plant environments</li>
+          </ul>
 
-    <p>
-      One outcome of this research is <strong>RICE</strong>, a reactive tactile-based
-      controller for moving into cluttered canopies using end-effector position and
-      real-time tactile feedback.
-    </p>
-  </div>
+          <p>
+            This work aims to help robots operate more effectively in real agricultural
+            settings where visibility is poor, contact is frequent, and plants respond
+            dynamically to touch.
+          </p>
+        </div>
 
-  <div class="info-card research-video">
-    <div class="project-meta">Research Video</div>
-    <h3>PhD Thesis in 3 Minutes</h3>
-    <p>
-      A short 3-minute presentation of my PhD research and its broader motivation.
-      This was my first recorded research talk, and it gives a concise overview
-      of the direction of my work.
-    </p>
+        <div class="info-card research-video">
+          <div class="project-meta">Research Video</div>
+          <h3>PhD Thesis in 3 Minutes</h3>
+          <p>
+            A short 3-minute presentation of my PhD research and its broader motivation.
+            This was my first recorded research talk, and it gives a concise overview
+            of the direction of my work.
+          </p>
 
-    <div class="video-embed">
-      <iframe
-        src="https://www.youtube.com/embed/f_wxr0n6E_8"
-        title="PhD Thesis in 3 Minutes"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/f_wxr0n6E_8"
+              title="PhD Thesis in 3 Minutes"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
 
-  <div class="info-card">
-    <div class="project-meta">Featured Project</div>
-    <h3>RICE Controller: Reactive Tactile-Based Controller for Moving into Cluttered Canopies</h3>
+        <div class="info-card">
+          <div class="project-meta">Featured Project</div>
+          <h3>RICE Controller: Reactive Tactile-Based Controller for Moving into Cluttered Canopies</h3>
 
-    <p>
-      RICE is a tactile-based reactive controller developed for safe navigation
-      in cluttered canopy environments. It enables a robotic arm to adapt its
-      motion during contact and continue progressing toward the goal even when
-      vision is partially or fully occluded.
-    </p>
+          <p>
+            RICE is a reactive tactile-based controller developed for safe motion
+            in cluttered canopy environments. It enables a robotic arm to adapt
+            its motion during contact and continue progressing toward the goal
+            even when vision is partially or fully occluded.
+          </p>
 
-    <div class="project-links">
-      <a
-        class="project-link"
-        href="https://rice-controller.github.io/rice-icra2026/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Visit Project Website
-      </a>
-    </div>
+          <div class="project-links">
+            <a
+              class="project-link"
+              href="https://rice-controller.github.io/rice-icra2026/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Project Website
+            </a>
+          </div>
 
-    <video class="large-video" controls autoplay muted loop playsinline>
-      <source src="RICE_title.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</article>
+          <video class="large-video" controls autoplay muted loop playsinline>
+            <source src="RICE_title.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </article>
 
       <article class="project-card reverse">
         <div>
@@ -704,6 +214,7 @@
           <img
             src="https://raw.githubusercontent.com/nidhihomey/nidhihomey.github.io/main/Nidhi-Homey-Parayil.jpeg"
             alt="Master's project in orchard robotics"
+            loading="lazy"
           />
         </div>
       </article>
@@ -737,6 +248,7 @@
           <img
             src="https://via.placeholder.com/900x620"
             alt="Placeholder image for prenatal scanning robot project"
+            loading="lazy"
           />
         </div>
       </article>
@@ -850,12 +362,12 @@
       </div>
 
       <div class="gallery">
-        <img src="rig_robocon.jpg" alt="RoboCon team project" />
-        <img src="robocon18.jpg" alt="RoboCon competition photo" />
+        <img src="rig_robocon.jpg" alt="RoboCon team project" loading="lazy" />
+        <img src="robocon18.jpg" alt="RoboCon competition photo" loading="lazy" />
       </div>
 
       <div class="field-day">
-        <img src="westech_feild_day.jpg" alt="Field day photo" />
+        <img src="westech_feild_day.jpg" alt="Field day photo" loading="lazy" />
       </div>
     </section>
 
