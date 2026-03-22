@@ -554,3 +554,9 @@ footer {
   width: 50%;
   margin: 8px auto 0;
 }
+
+@media (max-width: 640px) {
+  .rice-video {
+    width: 100%;
+  }
+}
