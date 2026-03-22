@@ -550,13 +550,16 @@ footer {
   }
 }
 
-.rice-video {
-  width: 50%;
+.large-video.rice-video {
+  display: block;
+  width: 60%;
+  max-width: 460px;
   margin: 8px auto 0;
 }
 
 @media (max-width: 640px) {
-  .rice-video {
+  .large-video.rice-video {
     width: 100%;
+    max-width: 100%;
   }
 }
